@@ -1,3 +1,5 @@
-####### texasHoldem
-## USAGE
-# python game.py
+# texasHoldem
+### USAGE
+```python
+python game.py
+```
