@@ -1,5 +1,6 @@
 import deck
 import player
+import evaluator
 
 initMoney = 1000
 BBAmount = 10
@@ -154,7 +155,29 @@ class Game(object):
 		finished = True
 
 	def evaluate(self):
-		
+		# self.showPubCard()
+		A = self.playerList[0].playerCard
+		B = self.playerList[1].playerCard
+		P = self.publicCards
+		# print(str(self.playerList[0])+"'s cards: ")
+		# A_cards = ""
+		# for i in A:
+		# 	A_cards+=str(i)
+		# print(A_cards)
+		# print(str(self.playerList[1])+"'s cards: ")
+		# A_cards = ""
+		# for i in B:
+		# 	A_cards+=str(i)
+		# print(A_cards)
+		winner = evaluator.judge(A, B, P)
+		if type(winner) != tuple:
+			if winner == A:
+				print (str(self.playerList[0])+" wins")
+			else:
+				print (str(self.playerList[1])+" wins")
+		else:
+			print("equal")
+
 
 
 if __name__ == '__main__':
